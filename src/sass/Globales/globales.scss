@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: rgb(58, 58, 58);
+    color: rgb(168, 168, 168);
+  }
+  
+  main{
+    display: grid;
+    place-content: center;
+  
+    width: 100vw;
+    height: 100vh;
+  }
+  

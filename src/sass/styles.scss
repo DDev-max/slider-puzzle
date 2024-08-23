@@ -1,0 +1,46 @@
+@forward "Header" /*AUTOMATICAMETE BUSCA AL INDEX*/;
+@forward "Globales";
+@forward "Tablero";
+@forward "Victoria";
+
+
+/*
+    @forward trae el archivo, se usa para tipos index, 
+    @use trae su contenido, sirve para variables (TRAE UN OBJ, POR LO QUE HAY QUE ACCEDER A SUS PROPIEDADES)
+
+
+    ANIDAMIENTO CON BEM:
+
+    .CLASE{
+        &__SUBELEMENTO1{  <== SU CLASE COMPLETA ES .CLASE__SUBELEMENTO1
+            ....
+        }
+
+        &__SUBELEMENTO2{   <== SU CLASE COMPLETA ES .CLASE__SUBELEMENTO2
+            ....
+        }
+
+    }
+
+
+
+
+
+
+    VARIABLES
+
+    $NOMBRE VARIABLE: "red"
+
+
+
+    MAP
+    basicamente es crear objetos, por ejemplo para los breakpoints de media querys y no tener que saberse de memoria las medidas:
+
+    $nombreObjeto:{
+    "grande" : 1920px
+    "pequeño" : 400rem
+
+    }
+
+
+*/
