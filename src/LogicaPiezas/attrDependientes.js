@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function desplazamiento({indice, piezaVacia, elmnt, movimientos, agarrandoPiezaVacia, dimensiones}) {
+export function attrDependientes({indice, piezaVacia, elmnt, movimientos, agarrandoPiezaVacia, dimensiones}) {
         
     const esPiezaVacia = movimientos[indice] == piezaVacia
 
@@ -58,7 +58,9 @@ export function desplazamiento({indice, piezaVacia, elmnt, movimientos, agarrand
     return {
         draggable: esAgarrable,
         onDragOver: permitirDrop,
-        className: `piezas ${esAgarrable? "movible": ""} ${elmnt == piezaVacia ? "piezaVacia" : `pieza${elmnt}`}`
+        className: `tablero__piezas 
+                    ${esAgarrable && "tablero__movible"}
+                    ${elmnt == piezaVacia ? "tablero__piezaVacia" : `tablero__pieza${elmnt}`}`
         
     }
 }

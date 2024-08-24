@@ -1,5 +1,7 @@
+@use "../globales/variables";
+
 .victoria{
-    background-color: rgb(105, 137, 151);
+    background-color: variables.$VictoriaBG;
     color: black;
     font-family: var(--NumerosFuente);
     font-size: clamp(1rem, 6vw, 2.5rem);
@@ -18,9 +20,15 @@
     transform: translate(-50%, -50%);
     z-index: 1;
 
+    &__msj{
+      font-size: clamp(1rem, 7vw, 2.5rem);
+    }
 
     .reinicarBtn{
         margin: 0 auto;
+        width: 40%;
+        height: 30%;
+        font-size: clamp(.5rem, 5vw, 2rem);
       }
       
   }

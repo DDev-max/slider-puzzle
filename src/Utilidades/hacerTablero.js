@@ -1,5 +1,5 @@
 export function hacerTablero() {
-    const dimensiones = 3
+    const dimensiones = 4
 
     const cantidadCampos = dimensiones * dimensiones
     const tablero = Array.from({length: cantidadCampos},(valor, indice) => indice +1)

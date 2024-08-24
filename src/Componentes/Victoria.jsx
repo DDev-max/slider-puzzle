@@ -16,7 +16,7 @@ export default function Victoria() {
   return (
     victoria &&
     <div className="victoria">
-      <h2>¡Felcidades! Lograste resolver el acertijo en {minutos}m {segundos}s </h2>
+      <h2 className="victoria__msj">¡Felcidades! Lograste resolver el acertijo en {minutos}m {segundos}s </h2>
       <BtnReiniciar/>
   </div>
     

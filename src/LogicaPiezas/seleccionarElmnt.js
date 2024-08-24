@@ -5,6 +5,6 @@ export function selecccionarElmnt({indice, event, setIndiceAgarrado, agarrandoPi
         agarrandoPiezaVacia.current = false
     }
     
-    event.target.classList.add("agarrando")
+    event.target.classList.add("tablero__agarrando")
     setIndiceAgarrado(indice)
 }

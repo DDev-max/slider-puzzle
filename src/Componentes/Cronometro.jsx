@@ -13,7 +13,7 @@ export function Cronometro() {
 
 
     return(
-        <header>
+        <header className="header">
             <p>{minutos} m: {segundos} s</p>
             <BtnReiniciar/>
         </header>
