@@ -1,4 +1,5 @@
 @use "../globales/mixins";
+@use "../globales/variables";
 
 .reinicarBtn {
   @include mixins.gridCentrado;
@@ -8,6 +9,9 @@
   margin: 0 1rem;
   cursor: pointer;
   font-size: clamp(0.5rem, 2.5vw, 1.2rem); //.5rem
+
+  color: variables.$TableroClr;
+  border-radius: variables.$BrdrRadius;
 }
 
 .header {
