@@ -1,0 +1,27 @@
+@use "../../sass/vars";
+
+
+//SACAR DE AQUI
+.resetBtn {
+  @include vars.gridCentrado;
+  padding: 1rem;
+  width: clamp(4rem, 25vw, 9rem); 
+  height: clamp(1.5rem, 10vw, 5rem); 
+  margin: 0 1rem;
+  cursor: pointer;
+  font-size: clamp(0.5rem, 2.5vw, 1.2rem); 
+
+  color: vars.$puzzleClr;
+  border-radius: vars.$BrdrRadius;
+}
+
+//SACAR DE AQUI
+
+
+.header {
+  font-size: clamp(1rem, 7vw, 2.5rem);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+}

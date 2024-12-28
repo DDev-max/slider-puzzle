@@ -1,0 +1,63 @@
+@use "../../sass/vars";
+
+.puzzle {
+  display: grid;
+  width: clamp(5rem, 90vw, 40rem);
+  /* clamp(20rem, 90vw ,40rem) */
+  height: clamp(5rem, 77vh, 40rem);
+  /* 90 */
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1rem;
+  background-color: vars.$puzzleClr;
+  border: .5rem solid black;
+  border-radius: vars.$BrdrRadius;
+
+  box-shadow: -1rem 1.5rem 1rem rgba(0, 0, 0, 0.555);
+
+
+  &__piece {
+    border-radius: vars.$BrdrRadius;
+    user-select: none;
+
+    @include vars.gridCentrado;
+    font-size: clamp(1rem, 7vw, 3rem); // 3rem
+    font-family: vars.$NumerosFuente;
+    font-style: italic;
+    color: vars.$NumClr;
+    border-width: .2rem 0 0 .2rem;
+    border-style: solid;
+    border-color: vars.$puzzleClr;
+    box-shadow: inset -.3rem .3rem .1rem rgba(255, 255, 255, 0.295);
+
+    &--movable {
+      cursor: grab;
+    }
+
+    &--empty {
+      background-color: vars.$VaciaBG;
+      border: none;
+      box-shadow: none;
+    }
+
+    &--grabbing {
+      opacity: .3;
+      cursor: grabbing;
+    }
+
+
+  }
+
+
+
+
+
+
+}
+
+@for $i from 1 through 16 {
+  .puzzle__pieza#{$i} {
+    background-color: hsl(0, 75%, $i * 3);
+  }
+}
+
+//hsl(260, 75%, $i *  3)
