@@ -5,6 +5,7 @@ import { dependentAttributes } from "./dependentAttributes"
 import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt"
 import { exchangePieces } from "./exchangePieces";
 import { defaultSize } from "../../data/consts";
+import { puzzleFont } from "../../data/fonts";
 
 export function Puzzle() {
     const context = usePuzzleCntxt()    
@@ -17,7 +18,7 @@ export function Puzzle() {
 
     return (
         <main>
-            <section className="puzzle" style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}>
+            <section className={`puzzle ${puzzleFont.className}`} style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}>
                 {movements.map((elmnt, idx) => {
                     const emptyPiece = movements.length
 

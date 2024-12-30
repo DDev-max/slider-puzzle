@@ -18,10 +18,9 @@
   &__piece {
     border-radius: vars.$BrdrRadius;
     user-select: none;
-
-    @include vars.gridCentrado;
+    display: grid;
+    place-content: center;
     font-size: clamp(1rem, 7vw, 3rem); // 3rem
-    font-family: vars.$NumerosFuente;
     font-style: italic;
     color: vars.$NumClr;
     border-width: .2rem 0 0 .2rem;
@@ -54,9 +53,9 @@
 
 }
 
-@for $i from 1 through 16 {
+@for $i from 1 through 9 {
   .puzzle__pieza#{$i} {
-    background-color: hsl(0, 75%, $i * 3);
+    background-color: hsl(0, 75%, $i * 3%);
   }
 }
 

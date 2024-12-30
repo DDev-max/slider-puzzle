@@ -1,6 +1,6 @@
 "use client"
+import { Header } from "../Components/Header/Header"
 import { Puzzle } from "../Components/Puzzle/Puzzle"
-import { StopWatch } from "../Components/StopWatch/StopWatch"
 import { PuzzleProviderCntxt } from "../Context/PuzzleProviderCntxt"
 import "../sass/styles.scss"
 
@@ -11,7 +11,7 @@ export default function QQQ() {
 
   return (
     <PuzzleProviderCntxt>
-      <StopWatch/>
+      <Header/>
       <Puzzle/>
     </PuzzleProviderCntxt>
   )

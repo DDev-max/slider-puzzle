@@ -1,9 +1,9 @@
 import { useEffect } from "react"
 import { LS_stopWatch } from "../../data/consts"
-import { UseStopWatchStorageProps } from "../../data/types"
+import { StopWatchState } from "../../data/types"
 
 
-export function useStopWatchStorage({stopWatch, setStopWatch}: UseStopWatchStorageProps){
+export function useStopWatchStorage({stopWatch, setStopWatch}: StopWatchState){
 
     useEffect(() => {
         const storage = Number(localStorage.getItem(LS_stopWatch) || 0)

@@ -1,27 +1,23 @@
-export interface PuzzleCntxtValues {
-    movements: number[]
-    setMovements: Dispatch<SetStateAction<number[]>>
+export interface VictoryState{
     victory: boolean
     setVictory: Dispatch<SetStateAction<boolean>>
 }
 
-
-export interface UseStopWatchStorageProps {
+export interface StopWatchState{
     stopWatch: number
     setStopWatch: Dispatch<SetStateAction<number>>
 }
 
-
-export interface UseMovementsStorageProps {
+export interface MovementsState{
     movements: number[]
     setMovements: Dispatch<SetStateAction<number[]>>
 }
 
+export interface PuzzleCntxtValues extends MovementsState, VictoryState {}
 
 export interface UseHasWinProps {
     movements: number[]
     setVictory: Dispatch<SetStateAction<boolean>>
-
 }
 
 export interface UseChangeStopWatchProps {
@@ -38,12 +34,6 @@ export interface RestartGameProps {
 }
 
 
-export interface VictoryProps {
-    stopWatch: number
-    setStopWatch: Dispatch<SetStateAction<number>>
-}
-
-
 export interface ResetBtnProps{
     setStopWatch: Dispatch<SetStateAction<number>>
 }
@@ -56,23 +46,18 @@ export interface SelectPieceProps{
 }
 
 
-export interface ExchangePiecesProps{
+export interface ExchangePiecesProps extends MovementsState{
     oldPieceIdx: number
-    setMovements: Dispatch<SetStateAction<number[]>>
-    movements: number[]
     newPieceIdx: number
-
 }
 
 
-export interface DependentAttributesProps{
+export interface DependentAttributesProps extends MovementsState{
     idx: number
     emptyPiece: number
     elmnt: number
-    movements: number[]
     isGrabbingEmptyPiece: MutableRefObject<boolean>
     size: number
     grabIdx: number
-    setMovements:  Dispatch<SetStateAction<number[]>>
     allPiecesRef: MutableRefObject<HTMLDivElement[]>
 }

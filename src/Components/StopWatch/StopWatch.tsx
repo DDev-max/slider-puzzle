@@ -1,31 +1,34 @@
 import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt";
-import { timeConversion} from "../../Utils/timeConversion";
+import { timeConversion } from "../../Utils/timeConversion";
 import { useChangeStopWatch } from "./useChangeStopWatch";
-import {ResetBtn} from "../ResetBtn/ResetBtn"
-import { useState } from "react";
 import { useStopWatchStorage } from "./useStopWatchStorage";
-import { Victory } from "../Victory/Victory";
+import { clockFont } from "../../data/fonts";
+import { ClockSVG } from "../SVG/ClockSVG";
+import { StopWatchState } from "../../data/types";
 
-export function StopWatch() {
+
+
+export function StopWatch({setStopWatch,stopWatch}:StopWatchState) {
 
     const context = usePuzzleCntxt()
-    const { victory }= context
+    const { victory } = context
 
-    const [stopWatch, setStopWatch] = useState(0)
-    useStopWatchStorage({stopWatch, setStopWatch})
-    useChangeStopWatch({setStopWatch, victory})
+    useStopWatchStorage({ stopWatch, setStopWatch })
+    useChangeStopWatch({ setStopWatch, victory })
 
-    const {minutes, seconds} = timeConversion(stopWatch)
-
+    const { minutes, seconds } = timeConversion(stopWatch)
 
 
-    //QUIZAS SEA MEJOR NO USAR <HEADER>
-    return(
-        <header className="header">
-            <p>{minutes} m: {seconds} s</p>
-            <ResetBtn setStopWatch={setStopWatch}/>
-            <Victory setStopWatch={setStopWatch} stopWatch={stopWatch}/>
-        </header>
+
+    return (
+        <div className={`stopWatch ${clockFont.className}`}>
+            <ClockSVG className="clockSvg" />
+            <p className="timeCont">
+                <span>{minutes} m:</span>
+                <span>{seconds} s</span>
+            </p>
+        </div>
+
     )
 }
 
