@@ -2,9 +2,10 @@ import { ResetBtn } from "../ResetBtn/ResetBtn"
 import { timeConversion } from "../../Utils/timeConversion"
 import {useHasWin} from "./useHasWin"
 import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt"
+import { VictoryProps } from "../../data/types"
 
-export function Victory ({stopWatch, setStopWatch}) {
-  const context = usePuzzleCntxt() || {}
+export function Victory ({stopWatch, setStopWatch}: VictoryProps) {
+  const context = usePuzzleCntxt()
   
   const {movements, victory, setVictory} = context
   const {seconds, minutes } = timeConversion(stopWatch)

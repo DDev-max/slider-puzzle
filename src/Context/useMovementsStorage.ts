@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react"
-import { LS_movements } from "../consts"
+import { LS_movements } from "../data/consts"
 import { useRandomArray } from "../Utils/randomArray"
+import { UseMovementsStorageProps } from "../data/types"
 
-export function useMovementsStorage({setMovements, movements}) {
+
+export function useMovementsStorage({setMovements, movements}: UseMovementsStorageProps) {
 
     const initialPuzzle =  useRef([])
     const randomArray = useRandomArray()
@@ -25,8 +27,5 @@ export function useMovementsStorage({setMovements, movements}) {
         localStorage.setItem(LS_movements, movements.toString())
 
     }, [movements])
-
-
-
 
 }

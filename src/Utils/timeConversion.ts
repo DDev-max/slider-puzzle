@@ -1,5 +1,4 @@
-
-export function timeConversion(elapsedSeconds) { 
+export function timeConversion(elapsedSeconds: number) { 
 
 
     const minutes = Math.floor(elapsedSeconds / 60)

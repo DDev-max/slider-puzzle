@@ -1,3 +1,5 @@
 import { createContext } from "react";
+import { PuzzleCntxtValues } from "../data/types";
 
-export const PuzzleCntxt= createContext(undefined)
+
+export const PuzzleCntxt= createContext<PuzzleCntxtValues | undefined>(undefined)

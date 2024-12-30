@@ -3,12 +3,12 @@ import { timeConversion} from "../../Utils/timeConversion";
 import { useChangeStopWatch } from "./useChangeStopWatch";
 import {ResetBtn} from "../ResetBtn/ResetBtn"
 import { useState } from "react";
-import { useStopWatchStorage } from "../../Context/useStopWatchStorage";
+import { useStopWatchStorage } from "./useStopWatchStorage";
 import { Victory } from "../Victory/Victory";
 
 export function StopWatch() {
 
-    const context = usePuzzleCntxt() || {}
+    const context = usePuzzleCntxt()
     const { victory }= context
 
     const [stopWatch, setStopWatch] = useState(0)

@@ -4,7 +4,7 @@ import { selectPiece } from "./selectPiece";
 import { dependentAttributes } from "./dependentAttributes"
 import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt"
 import { exchangePieces } from "./exchangePieces";
-import { defaultSize } from "../../consts";
+import { defaultSize } from "../../data/consts";
 
 export function Puzzle() {
     const context = usePuzzleCntxt()    
@@ -13,7 +13,7 @@ export function Puzzle() {
     const [grabIdx, setGrabIdx] = useState<number | null>(null)
     const isGrabbingEmptyPiece = useRef(false)
 
-    const allPiecesRef = useRef([])
+    const allPiecesRef = useRef<HTMLDivElement[]>([])
 
     return (
         <main>

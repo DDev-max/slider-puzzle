@@ -1,4 +1,6 @@
-export function exchangePieces ({ oldPieceIdx, setMovements, movements, newPieceIdx }) { 
+import { ExchangePiecesProps } from "../../data/types"
+
+export function exchangePieces ({ oldPieceIdx, setMovements, movements, newPieceIdx }: ExchangePiecesProps) { 
     
     const dropSound = new Audio( "cheess.mp3")
     dropSound.play()

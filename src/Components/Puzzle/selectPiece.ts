@@ -1,4 +1,6 @@
-export function selectPiece({ idx, e, setGrabIdx, isGrabbingEmptyPiece }) {
+import { SelectPieceProps } from "../../data/types"
+
+export function selectPiece({ idx, e, setGrabIdx, isGrabbingEmptyPiece}: SelectPieceProps) {
     
     isGrabbingEmptyPiece.current = e.target.innerText == ""
     ? true

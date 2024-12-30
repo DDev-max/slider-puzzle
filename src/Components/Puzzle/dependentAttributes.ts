@@ -1,8 +1,15 @@
+import { HTMLAttributes } from "react"
 import { exchangePieces } from "./exchangePieces"
+import { DependentAttributesProps } from "../../data/types"
 
 
-//hacerle el tipado bonito
-export function dependentAttributes({ idx, emptyPiece, elmnt, movements, isGrabbingEmptyPiece, size, grabIdx, setMovements, allPiecesRef }) {
+
+export function dependentAttributes(
+    { idx, emptyPiece, elmnt, movements,
+        isGrabbingEmptyPiece, size, grabIdx,
+        setMovements, allPiecesRef
+    }: DependentAttributesProps
+    ): HTMLAttributes<HTMLDivElement> {
 
     const isEmptyPiece = movements[idx] == emptyPiece
 

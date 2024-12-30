@@ -1,6 +1,8 @@
 import { useEffect } from "react"
+import { UseHasWinProps } from "../../data/types";
 
-export function useHasWin({ movements, setVictory }) {
+
+export function useHasWin({ movements, setVictory }: UseHasWinProps) {
 
   useEffect(() => {
     if (!movements.length) return

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { defaultSize } from "../consts";
+import { defaultSize } from "../data/consts";
 
 export function useRandomArray(refresh?: number) {
 
-    const [shuffledArray, setShuffledArray] = useState([])
+    const [shuffledArray, setShuffledArray] = useState<number[]>([])
 
     useEffect(()=>{
         const piecesQtty = defaultSize * defaultSize
