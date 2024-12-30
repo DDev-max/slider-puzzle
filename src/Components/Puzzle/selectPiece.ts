@@ -4,7 +4,6 @@ export function selectPiece({ idx, e, setGrabIdx, isGrabbingEmptyPiece }) {
     ? true
     : false
 
-
     setGrabIdx(idx)
 
 }

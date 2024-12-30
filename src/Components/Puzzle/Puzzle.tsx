@@ -1,14 +1,13 @@
-import {useState } from "react"
+import { useState } from "react"
 import { useRef } from "react"
 import { selectPiece } from "./selectPiece";
-import {dependentAttributes} from "./dependentAttributes"
-import { randomArray } from "../../Utils/randomArray"
+import { dependentAttributes } from "./dependentAttributes"
 import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt"
 import { exchangePieces } from "./exchangePieces";
+import { defaultSize } from "../../consts";
 
 export function Puzzle() {
-    const context = usePuzzleCntxt()
-    if (!context) return
+    const context = usePuzzleCntxt()    
 
     const { movements, setMovements } = context
     const [grabIdx, setGrabIdx] = useState<number | null>(null)
@@ -16,12 +15,9 @@ export function Puzzle() {
 
     const allPiecesRef = useRef([])
 
-    const { size } = randomArray()
-
     return (
         <main>
-            <p>Agarrando : {grabIdx}</p>
-            <section className="puzzle" style={{ gridTemplateColumns: `repeat(${size}, 1fr)` }}>
+            <section className="puzzle" style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}>
                 {movements.map((elmnt, idx) => {
                     const emptyPiece = movements.length
 
@@ -29,14 +25,14 @@ export function Puzzle() {
                         <div
                             key={elmnt}
                             tabIndex={0}
-                            ref={(piece => allPiecesRef.current[idx] = piece)}
+                            ref={(piece => {allPiecesRef.current[idx] = piece})}
 
-                            {...dependentAttributes({ idx, emptyPiece, elmnt, movements, isGrabbingEmptyPiece, size, grabIdx, setMovements, allPiecesRef })}
+                            {...dependentAttributes({ idx, emptyPiece, elmnt, movements, isGrabbingEmptyPiece, size: defaultSize, grabIdx, setMovements, allPiecesRef })}
 
                             onDragStart={(e) => selectPiece({ idx, e, setGrabIdx, isGrabbingEmptyPiece })}
-                            onDragEnd={() => {setGrabIdx(null)}}
+                            onDragEnd={() => { setGrabIdx(null) }}
 
-                            onDrop={() => exchangePieces({ newPieceIdx: grabIdx, oldPieceIdx:idx, setMovements, movements })}
+                            onDrop={() => exchangePieces({ newPieceIdx: grabIdx, oldPieceIdx: idx, setMovements, movements })}
 
                         >
                             {elmnt == emptyPiece ? "" : elmnt}

@@ -1,28 +1,16 @@
 import { useEffect } from "react";
-import { LS_stopWatch } from "../../consts";
 
 
-export function useChangeStopWatch({stopWatch, setStopWatch, victory, currentTime}) {
-    // SI NO SE USA USEEFFECT EL TIEMPO SE VA en x100000
-    useEffect(() => {
+export function useChangeStopWatch({setStopWatch, victory}) {
 
+    useEffect(()=>{
         if (victory) return
-
-        setStopWatch(currentTime)
-
-        const intervalId = setInterval(() => {
-            setStopWatch((tiempoActual) => {
-                const newTime = tiempoActual + 1
-
-                // HACERLO MENOS SEGUIDO POR QUE CONSUME MUCHO RECURSO
-                localStorage.setItem(LS_stopWatch, newTime)
-
-                return newTime
-            })
+        const stateInterval = setInterval(() => {
+            setStopWatch(prev=> prev + 1)
         }, 1000);
 
-        return () => clearInterval(intervalId)
-        
-    }, [stopWatch, victory])
+        return () => clearInterval(stateInterval);
+
+    }, [setStopWatch, victory])
 
 }

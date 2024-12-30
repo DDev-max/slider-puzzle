@@ -1,19 +1,16 @@
 import { useEffect } from "react"
 
-export function useHasWin({movements, setVictory}) {
-    const solution = [...movements].sort((a,b)=> a - b)
-  
+export function useHasWin({ movements, setVictory }) {
 
-    useEffect(()=>{
-      for (let i = 0; i < solution.length; i++) {
-        if (solution[i] != movements[i]) {
-          setVictory(false)
-          break
-        } else{
-          setVictory(true)
-        }
-      }
-  
-    }, [movements])
-  }
-  
+  useEffect(() => {
+    if (!movements.length) return
+
+    const solution = [...movements].sort((a, b) => a - b);
+
+    const isVictory = solution.every((value, index) => value === movements[index]);
+
+    if (isVictory) setVictory(true)
+  }, [movements, setVictory]);
+
+
+}
