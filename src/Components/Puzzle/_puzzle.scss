@@ -2,12 +2,11 @@
 
 .puzzle {
   display: grid;
-  width: clamp(5rem, 90vw, 40rem);
+  width: clamp(15rem, 90vw, 40rem);
   /* clamp(20rem, 90vw ,40rem) */
-  height: clamp(5rem, 77vh, 40rem);
+  height: clamp(15rem, 77vh, 40rem);
   /* 90 */
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 1rem;
+  margin-top: 2rem;
   background-color: vars.$puzzleClr;
   border: .5rem solid black;
   border-radius: vars.$BrdrRadius;

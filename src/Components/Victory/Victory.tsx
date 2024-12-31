@@ -15,9 +15,11 @@ export function Victory ({stopWatch, setStopWatch}: StopWatchState) {
 
   return (
     victory &&
-    <div className="victory">
-      <h2 className="victory__msg">Congratulations! You have solved the puzzle in {minutes}m and {seconds}s.</h2>
-      <ResetBtn setStopWatch={setStopWatch}/>
+    <div className="bgVictory">
+      <div className="victory">
+        <p role="alert" aria-live="assertive" aria-atomic="true" className="victory__msg">Congratulations! You have solved the puzzle in {minutes}m and {seconds}s.</p>
+        <ResetBtn setStopWatch={setStopWatch}/>
+      </div>
     </div>
     
   )

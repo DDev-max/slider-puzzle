@@ -1,0 +1,40 @@
+@use "../../sass/vars";
+
+.clockSvg {
+  width: 2rem;
+  margin: .4rem;
+}
+
+.stopWatch {
+  border: .15rem solid;
+  font-size: 1.5rem;
+  background-color: white;
+  min-width: 14rem;
+  border-radius: 2rem;
+
+  display: flex;
+  align-items: center;
+  margin: auto 0;
+
+  @media (width < 480px) {
+    min-width: 0;
+
+    
+    &:hover .timeCont{
+      display: block;
+    }
+  }
+
+}
+
+.timeCont {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+  @media (width < 480px) {
+    display: none;
+
+  }
+}
+

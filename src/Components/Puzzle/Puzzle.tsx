@@ -18,12 +18,14 @@ export function Puzzle() {
 
     return (
         <main>
-            <section className={`puzzle ${puzzleFont.className}`} style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}>
+            <div className={`puzzle ${puzzleFont.className}`} style={{ gridTemplateColumns: `repeat(${defaultSize}, 1fr)` }}>
                 {movements.map((elmnt, idx) => {
                     const emptyPiece = movements.length
 
                     return (
                         <div
+                        role="application"
+                            aria-label={emptyPiece == elmnt ? "Empty space, you can put a nearby piece here.": `Piece ${elmnt},  position ${idx + 1} of ${emptyPiece}`}
                             key={elmnt}
                             tabIndex={0}
                             ref={(piece => {allPiecesRef.current[idx] = piece})}
@@ -41,7 +43,7 @@ export function Puzzle() {
                     )
 
                 })}
-            </section>
+            </div>
         </main>
     )
 }

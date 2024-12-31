@@ -9,8 +9,8 @@
   body{
     background-color: vars.$BodyBG;
     color: vars.$LetrasBody;
-
     background: url(vars.$ImageBg) no-repeat center/cover;
+    font-family:Arial, Helvetica, sans-serif;
 
     height: 100vh;
   }
@@ -18,5 +18,7 @@
   main{
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
   }
   

@@ -9,7 +9,7 @@ export function dependentAttributes(
         isGrabbingEmptyPiece, size, grabIdx,
         setMovements, allPiecesRef
     }: DependentAttributesProps
-    ): HTMLAttributes<HTMLDivElement> {
+): HTMLAttributes<HTMLDivElement> {
 
     const isEmptyPiece = movements[idx] == emptyPiece
 
@@ -91,9 +91,15 @@ export function dependentAttributes(
     }
 
 
+    function handleClick() {
+        if (!canBeGrabbed) return
+        exchangePieces({ movements, setMovements, newPieceIdx: emptyPieceIdx, oldPieceIdx: idx })
+    }
+
 
     return {
         draggable: canBeGrabbed,
+        onClick: handleClick,
         onDragOver: handleDragOver,
         onKeyDown: handleKeyDown,
         className: `puzzle__piece 

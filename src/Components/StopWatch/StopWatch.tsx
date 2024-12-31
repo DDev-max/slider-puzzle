@@ -21,7 +21,7 @@ export function StopWatch({setStopWatch,stopWatch}:StopWatchState) {
 
 
     return (
-        <div className={`stopWatch ${clockFont.className}`}>
+        <div role="timer" className={`stopWatch ${clockFont.className}`}>
             <ClockSVG className="clockSvg" />
             <p className="timeCont">
                 <span>{minutes} m:</span>
