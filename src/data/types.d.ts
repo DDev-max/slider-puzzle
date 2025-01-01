@@ -15,6 +15,11 @@ export interface MovementsState{
 
 export interface PuzzleCntxtValues extends MovementsState, VictoryState {}
 
+export interface PuzzleProps extends MovementsState{
+    size?: number
+}
+
+
 export interface UseHasWinProps {
     movements: number[]
     setVictory: Dispatch<SetStateAction<boolean>>
@@ -36,6 +41,9 @@ export interface RestartGameProps {
 
 export interface ResetBtnProps{
     setStopWatch: Dispatch<SetStateAction<number>>
+    setMovements: Dispatch<SetStateAction<number[]>>
+    setVictory: Dispatch<SetStateAction<boolean>>
+
 }
 
 export interface SelectPieceProps{
@@ -46,7 +54,7 @@ export interface SelectPieceProps{
 }
 
 
-export interface ExchangePiecesProps extends MovementsState{
+export interface SwapPiecesProps extends MovementsState{
     oldPieceIdx: number
     newPieceIdx: number
 }
@@ -57,7 +65,53 @@ export interface DependentAttributesProps extends MovementsState{
     emptyPiece: number
     elmnt: number
     isGrabbingEmptyPiece: MutableRefObject<boolean>
-    size: number
     grabIdx: number
     allPiecesRef: MutableRefObject<HTMLDivElement[]>
+    size?: number
+}
+
+
+
+export interface StopWatchProps extends StopWatchState{
+    victory: boolean
+}
+
+export interface VictoryProps extends VictoryState, StopWatchState, MovementsState{}
+
+export interface HeaderProps extends MovementsState, VictoryState{}
+
+
+export interface NearEmptyPieceAndAnotherRowProps{
+    emptyPieceIdx: number
+    elmnt :  number
+    movements: number[]
+    size? : number
+}
+
+
+export interface HandleDragOverProps{
+    e:  DragEvent<HTMLDivElement>
+    isGrabbingEmptyPiece :MutableRefObject<boolean>
+    canBeGrabbed: boolean
+    isEmptyPiece: boolean
+}
+
+
+export interface HandleKeyDownProps extends MovementsState{
+    e: KeyboardEvent<HTMLDivElement>
+    idx: number
+    emptyPieceIdx: number
+    leftPiece: number
+    rightPiece: number
+    bottomPiece: number
+    topPiece: number
+    canBeGrabbed: boolean
+    allPiecesRef: MutableRefObject<HTMLDivElement[]>
+
+}
+
+
+export interface UseRandomArrayProps{
+    refresh?: number
+    size?: number
 }

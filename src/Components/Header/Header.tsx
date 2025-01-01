@@ -2,18 +2,19 @@ import { useState } from "react";
 import { ResetBtn } from "../ResetBtn/ResetBtn";
 import { StopWatch } from "../StopWatch/StopWatch";
 import { Victory } from "../Victory/Victory";
+import { HeaderProps } from "../../data/types";
 
-export function Header() {
+export function Header({movements,setMovements,setVictory,victory}:HeaderProps) {
     const [stopWatch, setStopWatch] = useState(0)
 
 
     return (
         <>
             <header className="header">
-                <StopWatch setStopWatch={setStopWatch} stopWatch={stopWatch} />
-                <ResetBtn setStopWatch={setStopWatch} />
+                <StopWatch victory={victory} setStopWatch={setStopWatch} stopWatch={stopWatch} />
+                <ResetBtn setMovements={setMovements} setVictory={setVictory} setStopWatch={setStopWatch} />
             </header>
-            <Victory setStopWatch={setStopWatch} stopWatch={stopWatch} />
+            <Victory movements={movements} setMovements={setMovements} setVictory={setVictory} victory={victory} setStopWatch={setStopWatch} stopWatch={stopWatch} />
         </>
 
     )

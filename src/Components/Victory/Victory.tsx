@@ -1,13 +1,11 @@
 import { ResetBtn } from "../ResetBtn/ResetBtn"
-import { timeConversion } from "../../Utils/timeConversion"
-import {useHasWin} from "./useHasWin"
-import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt"
-import { StopWatchState } from "../../data/types"
+import { timeConversion } from "../../Utils/timeConversion/timeConversion"
+import {useHasWin} from "./useHasWin/useHasWin"
+import { VictoryProps } from "../../data/types"
 
-export function Victory ({stopWatch, setStopWatch}: StopWatchState) {
-  const context = usePuzzleCntxt()
+
+export function Victory ({stopWatch, setStopWatch,setVictory,victory,movements,setMovements}: VictoryProps) {
   
-  const {movements, victory, setVictory} = context
   const {seconds, minutes } = timeConversion(stopWatch)
 
   useHasWin({movements, setVictory})
@@ -18,7 +16,7 @@ export function Victory ({stopWatch, setStopWatch}: StopWatchState) {
     <div className="bgVictory">
       <div className="victory">
         <p role="alert" aria-live="assertive" aria-atomic="true" className="victory__msg">Congratulations! You have solved the puzzle in {minutes}m and {seconds}s.</p>
-        <ResetBtn setStopWatch={setStopWatch}/>
+        <ResetBtn setVictory={setVictory} setMovements={setMovements} setStopWatch={setStopWatch}/>
       </div>
     </div>
     

@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { defaultSize } from "../data/consts";
+import { defaultSize } from "../../data/consts";
+import { UseRandomArrayProps } from "../../data/types";
 
-export function useRandomArray(refresh?: number) {
+
+
+export function useRandomArray({refresh, size=defaultSize}:UseRandomArrayProps) {
 
     const [shuffledArray, setShuffledArray] = useState<number[]>([])
 
     useEffect(()=>{
-        const piecesQtty = defaultSize * defaultSize
+        const piecesQtty = size * size
 
         const array = Array.from({length: piecesQtty},( _ , idx) => idx +1)
 
@@ -14,12 +17,12 @@ export function useRandomArray(refresh?: number) {
             const randomNumber = Math.floor(Math.random() * (i + 1));
             [array[i], array[randomNumber]] = [array[randomNumber], array[i]];
         }
+        
 
         setShuffledArray(array)
 
-        console.log("nuevo array generado", array);
 
-    }, [refresh])
+    }, [refresh, size])
     
 
     return shuffledArray

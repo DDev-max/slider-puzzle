@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { UseChangeStopWatchProps } from "../../data/types";
+import { UseChangeStopWatchProps } from "../../../data/types";
 
 
 export function useChangeStopWatch({setStopWatch, victory}:UseChangeStopWatchProps) {

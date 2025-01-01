@@ -1,4 +1,4 @@
-import { RestartGameProps } from "../../data/types"
+import { RestartGameProps } from "../../../data/types"
 
 export function restartGame({ setStopWatch, setRefresh, setMovements, randomArray, setVictory }: RestartGameProps) {
 

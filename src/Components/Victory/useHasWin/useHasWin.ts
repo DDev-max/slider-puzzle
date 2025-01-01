@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { UseHasWinProps } from "../../data/types";
+import { UseHasWinProps } from "../../../data/types";
 
 
 export function useHasWin({ movements, setVictory }: UseHasWinProps) {

@@ -1,18 +1,24 @@
 "use client"
+import { useState } from "react"
 import { Header } from "../Components/Header/Header"
 import { Puzzle } from "../Components/Puzzle/Puzzle"
-import { PuzzleProviderCntxt } from "../Context/PuzzleProviderCntxt"
 import "../sass/styles.scss"
+import { useMovementsStorage } from "../Components/Puzzle/useMovementsStorage/useMovementsStorage"
 
 
-export default function QQQ() {
+export default function Page() {
 
-  //QUIZAS NO USAR CONTEXT...  
+    const [movements, setMovements] = useState<number[]>([])
+    useMovementsStorage({movements,setMovements})
+
+
+    const [victory, setVictory] = useState(false) 
 
   return (
-    <PuzzleProviderCntxt>
-      <Header/>
-      <Puzzle/>
-    </PuzzleProviderCntxt>
+    <>
+      <Header  movements={movements} setMovements={setMovements} setVictory={setVictory} victory={victory}/>
+      <Puzzle movements={movements} setMovements={setMovements}/>
+    </>
+
   )
 };

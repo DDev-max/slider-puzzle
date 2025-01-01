@@ -1,19 +1,16 @@
 import { useState } from "react";
-import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt"
-import { useRandomArray } from "../../Utils/randomArray";
-import { restartGame } from "./resetGame"
+import { useRandomArray } from "../../Utils/useRandomArray/useRandomArray";
+import { restartGame } from "./resetGame/resetGame"
 import { ResetBtnProps } from "../../data/types";
 import { RestartSVG } from "../SVG/RestartSVG";
 
 
 
-export function ResetBtn({ setStopWatch }: ResetBtnProps) {
+export function ResetBtn({ setStopWatch,setMovements,setVictory }: ResetBtnProps) {
 
-  const context = usePuzzleCntxt()
   const [refresh, setRefresh] = useState(0)
-  const { setMovements, setVictory } = context
 
-  const randomArray = useRandomArray(refresh)
+  const randomArray = useRandomArray({refresh})
 
 
 

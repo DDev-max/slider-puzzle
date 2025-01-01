@@ -16,7 +16,7 @@
   align-items: center;
   margin: auto 0;
 
-  @media (width < 480px) {
+  @media (width < vars.$SmallBrkPointMQ) {
     min-width: 0;
 
     
@@ -32,7 +32,7 @@
   width: 100%;
   justify-content: space-around;
 
-  @media (width < 480px) {
+  @media (width < vars.$SmallBrkPointMQ) {
     display: none;
 
   }

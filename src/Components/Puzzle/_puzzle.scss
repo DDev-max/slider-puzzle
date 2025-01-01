@@ -3,23 +3,21 @@
 .puzzle {
   display: grid;
   width: clamp(15rem, 90vw, 40rem);
-  /* clamp(20rem, 90vw ,40rem) */
   height: clamp(15rem, 77vh, 40rem);
-  /* 90 */
   margin-top: 2rem;
   background-color: vars.$puzzleClr;
   border: .5rem solid black;
-  border-radius: vars.$BrdrRadius;
+  border-radius: .5rem;
 
   box-shadow: -1rem 1.5rem 1rem rgba(0, 0, 0, 0.555);
 
 
   &__piece {
-    border-radius: vars.$BrdrRadius;
+    border-radius: .5rem;
     user-select: none;
     display: grid;
     place-content: center;
-    font-size: clamp(1rem, 7vw, 3rem); // 3rem
+    font-size: clamp(1rem, 7vw, 3rem);
     font-style: italic;
     color: vars.$NumClr;
     border-width: .2rem 0 0 .2rem;
@@ -32,7 +30,7 @@
     }
 
     &--empty {
-      background-color: vars.$VaciaBG;
+      background-color: vars.$emptyPieceBG;
       border: none;
       box-shadow: none;
     }
@@ -58,4 +56,3 @@
   }
 }
 
-//hsl(260, 75%, $i *  3)

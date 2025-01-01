@@ -1,4 +1,4 @@
-import { SelectPieceProps } from "../../data/types"
+import { SelectPieceProps } from "../../../data/types"
 
 export function selectPiece({ idx, e, setGrabIdx, isGrabbingEmptyPiece}: SelectPieceProps) {
     

@@ -1,17 +1,12 @@
-import { usePuzzleCntxt } from "../../Context/usePuzzleCntxt";
-import { timeConversion } from "../../Utils/timeConversion";
-import { useChangeStopWatch } from "./useChangeStopWatch";
-import { useStopWatchStorage } from "./useStopWatchStorage";
+import { timeConversion } from "../../Utils/timeConversion/timeConversion";
+import { useChangeStopWatch } from "./useChangeStopWatch/useChangeStopWatch";
+import { useStopWatchStorage } from "./useStopWatchStorage/useStopWatchStorage";
 import { clockFont } from "../../data/fonts";
 import { ClockSVG } from "../SVG/ClockSVG";
-import { StopWatchState } from "../../data/types";
+import { StopWatchProps } from "../../data/types";
 
 
-
-export function StopWatch({setStopWatch,stopWatch}:StopWatchState) {
-
-    const context = usePuzzleCntxt()
-    const { victory } = context
+export function StopWatch({setStopWatch,stopWatch, victory}:StopWatchProps) {
 
     useStopWatchStorage({ stopWatch, setStopWatch })
     useChangeStopWatch({ setStopWatch, victory })
