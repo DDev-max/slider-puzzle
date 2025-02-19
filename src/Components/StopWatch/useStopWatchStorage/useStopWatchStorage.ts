@@ -13,7 +13,9 @@ export function useStopWatchStorage({stopWatch, setStopWatch}: StopWatchState){
     }, [setStopWatch])
 
     useEffect(() => {
-        localStorage.setItem(LS_stopWatch, stopWatch.toString())
-    }, [stopWatch])
+        if (stopWatch % 5 === 0) {
+          localStorage.setItem("stopWatch", stopWatch.toString());          
+        }
+      }, [stopWatch]);
 
 }
