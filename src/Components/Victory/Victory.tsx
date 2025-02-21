@@ -1,7 +1,9 @@
 import { ResetBtn } from '../ResetBtn/ResetBtn'
 import { timeConversion } from '../../Utils/timeConversion/timeConversion'
 import { useHasWin } from './useHasWin/useHasWin'
-import type { VictoryProps } from '../../data/types'
+import type { MovementsState, StopWatchState, VictoryState } from '../../data/globalTypes'
+
+interface VictoryProps extends VictoryState, StopWatchState, MovementsState {}
 
 export function Victory({ stopWatch, setStopWatch, setVictory, victory, movements, setMovements }: VictoryProps) {
   const { seconds, minutes } = timeConversion(stopWatch)

@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
-import type { UseChangeStopWatchProps } from '../../../data/types'
+import type { StopWatchState, VictoryState } from '../../../data/globalTypes'
+
+interface UseChangeStopWatchProps extends Pick<StopWatchState, 'setStopWatch'>, Pick<VictoryState, 'victory'> {}
 
 export function useChangeStopWatch({ setStopWatch, victory }: UseChangeStopWatchProps) {
   useEffect(() => {

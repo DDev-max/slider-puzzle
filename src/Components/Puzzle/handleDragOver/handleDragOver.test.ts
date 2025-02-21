@@ -1,6 +1,7 @@
+import type { DragEvent } from 'react';
 import { handleDragOver } from './handleDragOver';
 
-const e = { preventDefault: jest.fn() };
+const e = { preventDefault: jest.fn() } as unknown as DragEvent<HTMLDivElement>;
 
 describe('dragging', () => {
   it('should allow dragging of the empty piece if it can be moved', () => {

@@ -3,7 +3,9 @@ import { useChangeStopWatch } from './useChangeStopWatch/useChangeStopWatch'
 import { useStopWatchStorage } from './useStopWatchStorage/useStopWatchStorage'
 import { clockFont } from '../../data/fonts'
 import { ClockSVG } from '../SVG/ClockSVG'
-import type { StopWatchProps } from '../../data/types'
+import type { StopWatchState, VictoryState } from '../../data/globalTypes'
+
+interface StopWatchProps extends StopWatchState, Pick<VictoryState, 'victory'> {}
 
 export function StopWatch({ setStopWatch, stopWatch, victory }: StopWatchProps) {
   useStopWatchStorage({ stopWatch, setStopWatch })

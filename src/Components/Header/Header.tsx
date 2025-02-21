@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { ResetBtn } from '../ResetBtn/ResetBtn'
 import { StopWatch } from '../StopWatch/StopWatch'
 import { Victory } from '../Victory/Victory'
-import type { HeaderProps } from '../../data/types'
+import type { MovementsState, VictoryState } from '../../data/globalTypes'
+
+interface HeaderProps extends MovementsState, VictoryState {}
 
 export function Header({ movements, setMovements, setVictory, victory }: HeaderProps) {
   const [stopWatch, setStopWatch] = useState(0)

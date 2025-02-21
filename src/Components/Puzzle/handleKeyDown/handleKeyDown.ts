@@ -1,5 +1,18 @@
-import type { HandleKeyDownProps } from '../../../data/types'
+import type { KeyboardEvent, MutableRefObject } from 'react'
 import { swapPieces } from '../swapPieces/swapPieces'
+import type { MovementsState } from '../../../data/globalTypes'
+
+interface HandleKeyDownProps extends MovementsState {
+  e: KeyboardEvent<HTMLDivElement>
+  idx: number
+  emptyPieceIdx: number
+  leftPiece: number
+  rightPiece: number
+  bottomPiece: number
+  topPiece: number
+  canBeGrabbed: boolean
+  allPiecesRef: MutableRefObject<HTMLDivElement[]>
+}
 
 export function handleKeyDown({
   allPiecesRef,

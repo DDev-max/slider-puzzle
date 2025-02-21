@@ -5,7 +5,11 @@ import { dependentAttributes } from './dependentAttributes'
 import { swapPieces } from './swapPieces/swapPieces'
 import { defaultSize } from '../../data/consts'
 import { puzzleFont } from '../../data/fonts'
-import type { PuzzleProps } from '../../data/types'
+import type { MovementsState } from '../../data/globalTypes'
+
+interface PuzzleProps extends MovementsState {
+  size?: number
+}
 
 export function Puzzle({ movements, setMovements, size = defaultSize }: PuzzleProps) {
   const [grabIdx, setGrabIdx] = useState<number | null>(null)

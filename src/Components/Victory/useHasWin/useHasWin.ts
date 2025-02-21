@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
-import type { UseHasWinProps } from '../../../data/types'
+import type { MovementsState, VictoryState } from '../../../data/globalTypes'
+
+interface UseHasWinProps extends Pick<VictoryState, 'setVictory'>, Pick<MovementsState, 'movements'> {}
 
 export function useHasWin({ movements, setVictory }: UseHasWinProps) {
   useEffect(() => {

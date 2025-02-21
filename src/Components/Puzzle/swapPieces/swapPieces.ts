@@ -1,4 +1,9 @@
-import type { SwapPiecesProps } from '../../../data/types'
+import type { MovementsState } from '../../../data/globalTypes'
+
+interface SwapPiecesProps extends MovementsState {
+  oldPieceIdx: number
+  newPieceIdx: number
+}
 
 export function swapPieces({ oldPieceIdx, setMovements, movements, newPieceIdx }: SwapPiecesProps) {
   const dropSound = new Audio('cheess.mp3')

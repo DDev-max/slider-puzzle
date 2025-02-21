@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { LS_stopWatch } from '../../../data/consts'
-import type { StopWatchState } from '../../../data/types'
+import type { StopWatchState } from '../../../data/globalTypes'
 
 export function useStopWatchStorage({ stopWatch, setStopWatch }: StopWatchState) {
   useEffect(() => {

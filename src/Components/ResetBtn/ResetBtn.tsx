@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useRandomArray } from '../../Utils/useRandomArray/useRandomArray'
 import { restartGame } from './resetGame/resetGame'
-import type { ResetBtnProps } from '../../data/types'
 import { RestartSVG } from '../SVG/RestartSVG'
+import type { ResetBtnProps } from '../../data/globalTypes'
 
 export function ResetBtn({ setStopWatch, setMovements, setVictory }: ResetBtnProps) {
   const [refresh, setRefresh] = useState(0)

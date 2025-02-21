@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import { defaultSize } from '../../data/consts'
-import type { UseRandomArrayProps } from '../../data/types'
+
+interface UseRandomArrayProps {
+  refresh?: number
+  size?: number
+}
 
 export function useRandomArray({ refresh, size = defaultSize }: UseRandomArrayProps) {
   const [shuffledArray, setShuffledArray] = useState<number[]>([])

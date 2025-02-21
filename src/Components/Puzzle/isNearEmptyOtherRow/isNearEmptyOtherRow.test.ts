@@ -1,4 +1,4 @@
-import { nearEmptyPieceAndAnotherRow } from './nearEmptyPieceAndAnotherRow';
+import { isNearEmptyOtherRow } from './isNearEmptyOtherRow';
 
 it('should return true if empty piece is on right edge and current piece is to the right', () => {
   const size = 3;
@@ -6,7 +6,7 @@ it('should return true if empty piece is on right edge and current piece is to t
   const elmnt = 3;
   const emptyPieceIdx = 2;
 
-  const differentRow = nearEmptyPieceAndAnotherRow({ elmnt, emptyPieceIdx, movements, size });
+  const differentRow = isNearEmptyOtherRow({ elmnt, emptyPieceIdx, movements, size });
 
   expect(differentRow).toBeTruthy();
 });
@@ -17,7 +17,7 @@ it('should return true if empty piece is on left edge and current piece is to th
   const elmnt = 3;
   const emptyPieceIdx = 3;
 
-  const differentRow = nearEmptyPieceAndAnotherRow({ elmnt, emptyPieceIdx, movements, size });
+  const differentRow = isNearEmptyOtherRow({ elmnt, emptyPieceIdx, movements, size });
 
   expect(differentRow).toBeTruthy();
 });
@@ -28,7 +28,7 @@ it('should return false if empty piece is not on the edge', () => {
   const elmnt = 4;
   const emptyPieceIdx = 4;
 
-  const differentRow = nearEmptyPieceAndAnotherRow({ elmnt, emptyPieceIdx, movements, size });
+  const differentRow = isNearEmptyOtherRow({ elmnt, emptyPieceIdx, movements, size });
 
   expect(differentRow).toBeFalsy();
 });
@@ -39,7 +39,7 @@ it('should return false if empty piece is on the edge but current piece is not n
   const elmnt = 3;
   const emptyPieceIdx = 5;
 
-  const differentRow = nearEmptyPieceAndAnotherRow({ elmnt, emptyPieceIdx, movements, size });
+  const differentRow = isNearEmptyOtherRow({ elmnt, emptyPieceIdx, movements, size });
 
   expect(differentRow).toBeFalsy();
 });

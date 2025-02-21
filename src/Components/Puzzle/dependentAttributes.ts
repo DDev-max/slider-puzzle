@@ -1,10 +1,20 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, MutableRefObject } from 'react'
 import { swapPieces } from './swapPieces/swapPieces'
-import type { DependentAttributesProps } from '../../data/types'
-import { nearEmptyPieceAndAnotherRow } from './nearEmptyPieceAndAnotherRow/nearEmptyPieceAndAnotherRow'
+import type { MovementsState } from '../../data/globalTypes'
 import { handleDragOver } from './handleDragOver/handleDragOver'
 import { handleKeyDown } from './handleKeyDown/handleKeyDown'
 import { defaultSize } from '../../data/consts'
+import { isNearEmptyOtherRow } from './isNearEmptyOtherRow/isNearEmptyOtherRow'
+
+interface DependentAttributesProps extends MovementsState {
+  idx: number
+  emptyPiece: number
+  elmnt: number
+  isGrabbingEmptyPiece: MutableRefObject<boolean>
+  grabIdx: number
+  allPiecesRef: MutableRefObject<HTMLDivElement[]>
+  size?: number
+}
 
 export function dependentAttributes({
   idx,
@@ -28,7 +38,7 @@ export function dependentAttributes({
 
   const emptyPieceIsNear = rightPiece == emptyPiece || leftPiece == emptyPiece || isEmptyPiece || topPiece == emptyPiece || bottomPiece == emptyPiece
 
-  const canBeGrabbed = !nearEmptyPieceAndAnotherRow({ elmnt, emptyPieceIdx, movements, size }) && emptyPieceIsNear
+  const canBeGrabbed = !isNearEmptyOtherRow({ elmnt, emptyPieceIdx, movements, size }) && emptyPieceIsNear
 
   return {
     draggable: canBeGrabbed,

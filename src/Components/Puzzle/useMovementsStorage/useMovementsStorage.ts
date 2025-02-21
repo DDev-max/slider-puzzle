@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useRandomArray } from '../../../Utils/useRandomArray/useRandomArray'
 import { LS_movements } from '../../../data/consts'
-import type { MovementsState } from '../../../data/types'
+import type { MovementsState } from '../../../data/globalTypes'
 
 export function useMovementsStorage({ setMovements, movements }: MovementsState) {
   const initialPuzzle = useRef([])
