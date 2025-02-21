@@ -1,6 +1,5 @@
 @use "../../sass/vars";
 
-
 .header {
   font-size: clamp(1rem, 7vw, 2.5rem);
   display: flex;
@@ -10,4 +9,3 @@
   height: 4rem;
   position: fixed;
 }
-

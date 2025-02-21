@@ -1,11 +1,7 @@
-import { SelectPieceProps } from "../../../data/types"
+import type { SelectPieceProps } from '../../../data/types'
 
-export function selectPiece({ idx, e, setGrabIdx, isGrabbingEmptyPiece}: SelectPieceProps) {
-    
-    isGrabbingEmptyPiece.current = e.target.innerText == ""
-    ? true
-    : false
+export function selectPiece({ idx, e, setGrabIdx, isGrabbingEmptyPiece }: SelectPieceProps) {
+  isGrabbingEmptyPiece.current = e.target.innerText == '' ? true : false
 
-    setGrabIdx(idx)
-
+  setGrabIdx(idx)
 }

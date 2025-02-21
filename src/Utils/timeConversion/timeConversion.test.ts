@@ -1,8 +1,8 @@
-import { timeConversion } from "./timeConversion"
+import { timeConversion } from './timeConversion';
 
-it("should return time conversion", ()=>{
-    const {minutes,seconds} = timeConversion(65)
+it('should return time conversion', () => {
+  const { minutes, seconds } = timeConversion(65);
 
-    expect(minutes).toBe(1)
-    expect(seconds).toBe(5)
-})
+  expect(minutes).toBe(1);
+  expect(seconds).toBe(5);
+});

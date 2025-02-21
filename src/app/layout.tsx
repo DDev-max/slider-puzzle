@@ -3,12 +3,10 @@ export const metadata = {
   description: 'Slide, shift, and laugh your way through tricky puzzles. Chaos meets fun—are you ready to align the madness?',
 }
 
-export default function RootLayout({children}: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
+    <html lang='en'>
+      <body>{children}</body>
     </html>
   )
 }

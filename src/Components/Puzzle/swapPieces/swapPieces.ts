@@ -1,15 +1,14 @@
-import { SwapPiecesProps } from "../../../data/types"
+import type { SwapPiecesProps } from '../../../data/types'
 
-export function swapPieces ({ oldPieceIdx, setMovements, movements, newPieceIdx }: SwapPiecesProps) { 
-    
-    const dropSound = new Audio( "cheess.mp3")
-    dropSound.play()
+export function swapPieces({ oldPieceIdx, setMovements, movements, newPieceIdx }: SwapPiecesProps) {
+  const dropSound = new Audio('cheess.mp3')
+  dropSound.play()
 
-    const movementsCopy = [...movements]
-    const originalOldPiece = movementsCopy[oldPieceIdx]
+  const movementsCopy = [...movements]
+  const originalOldPiece = movementsCopy[oldPieceIdx]
 
-    movementsCopy[oldPieceIdx] = movementsCopy[newPieceIdx]
-    movementsCopy[newPieceIdx] = originalOldPiece
+  movementsCopy[oldPieceIdx] = movementsCopy[newPieceIdx]
+  movementsCopy[newPieceIdx] = originalOldPiece
 
-    setMovements(movementsCopy)
+  setMovements(movementsCopy)
 }

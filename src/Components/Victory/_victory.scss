@@ -1,39 +1,36 @@
 @use "../../sass/vars";
 
-.bgVictory{
+.bgVictory {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.493);
   inset: 0;
 }
 
-.victory{
-    background-color: vars.$victoryBG;
-    color: black;
-    font-size: clamp(1rem, 6vw, 2.5rem);
-    height: 50vh;
-    width: clamp(10rem, 90vw, 50rem);
-    border-radius: 1rem;
-  
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    padding: 1rem;
+.victory {
+  background-color: vars.$victoryBG;
+  color: black;
+  font-size: clamp(1rem, 6vw, 2.5rem);
+  height: 50vh;
+  width: clamp(10rem, 90vw, 50rem);
+  border-radius: 1rem;
 
-    &__msg{
-      font-size: clamp(1rem, 7vw, 2.5rem);
-    }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  padding: 1rem;
 
-    .resetBtn{
-        margin: 0 auto;
-        height: 30%;
-      }
-      
+  &__msg {
+    font-size: clamp(1rem, 7vw, 2.5rem);
   }
 
-  
+  .resetBtn {
+    margin: 0 auto;
+    height: 30%;
+  }
+}

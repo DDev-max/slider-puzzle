@@ -1,29 +1,23 @@
-import { useState } from "react";
-import { useRandomArray } from "../../Utils/useRandomArray/useRandomArray";
-import { restartGame } from "./resetGame/resetGame"
-import { ResetBtnProps } from "../../data/types";
-import { RestartSVG } from "../SVG/RestartSVG";
+import { useState } from 'react'
+import { useRandomArray } from '../../Utils/useRandomArray/useRandomArray'
+import { restartGame } from './resetGame/resetGame'
+import type { ResetBtnProps } from '../../data/types'
+import { RestartSVG } from '../SVG/RestartSVG'
 
-
-
-export function ResetBtn({ setStopWatch,setMovements,setVictory }: ResetBtnProps) {
-
+export function ResetBtn({ setStopWatch, setMovements, setVictory }: ResetBtnProps) {
   const [refresh, setRefresh] = useState(0)
 
-  const randomArray = useRandomArray({refresh})
-
-
+  const randomArray = useRandomArray({ refresh })
 
   return (
     <button
-      className="resetBtn"
+      className='resetBtn'
       onClick={() => {
         restartGame({ randomArray, setMovements, setRefresh, setStopWatch, setVictory })
       }}
     >
-      <RestartSVG className="resetSVG"/>
+      <RestartSVG className='resetSVG' />
       Restart game
-
-    </button >
+    </button>
   )
 }

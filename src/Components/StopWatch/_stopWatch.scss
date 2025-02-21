@@ -2,11 +2,11 @@
 
 .clockSvg {
   width: 2rem;
-  margin: .4rem;
+  margin: 0.4rem;
 }
 
 .stopWatch {
-  border: .15rem solid;
+  border: 0.15rem solid;
   font-size: 1.5rem;
   background-color: white;
   min-width: 14rem;
@@ -19,12 +19,10 @@
   @media (width < vars.$SmallBrkPointMQ) {
     min-width: 0;
 
-    
-    &:hover .timeCont{
+    &:hover .timeCont {
       display: block;
     }
   }
-
 }
 
 .timeCont {
@@ -34,7 +32,5 @@
 
   @media (width < vars.$SmallBrkPointMQ) {
     display: none;
-
   }
 }
-
