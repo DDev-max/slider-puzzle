@@ -36,6 +36,8 @@ export function dependentAttributes({
   const topPiece = movements[idx - size]
   const bottomPiece = movements[idx + size]
 
+  const adjacentPieces = { leftPiece, rightPiece, topPiece, bottomPiece }
+
   const emptyPieceIsNear = rightPiece == emptyPiece || leftPiece == emptyPiece || isEmptyPiece || topPiece == emptyPiece || bottomPiece == emptyPiece
 
   const canBeGrabbed = !isNearEmptyOtherRow({ elmnt, emptyPieceIdx, movements, size }) && emptyPieceIsNear
@@ -44,8 +46,7 @@ export function dependentAttributes({
     draggable: canBeGrabbed,
     onClick: canBeGrabbed && !isEmptyPiece ? () => swapPieces({ movements, setMovements, newPieceIdx: emptyPieceIdx, oldPieceIdx: idx }) : undefined,
     onDragOver: e => handleDragOver({ canBeGrabbed, e, isEmptyPiece, isGrabbingEmptyPiece }),
-    onKeyDown: e =>
-      handleKeyDown({ allPiecesRef, bottomPiece, canBeGrabbed, e, emptyPieceIdx, idx, leftPiece, movements, rightPiece, setMovements, topPiece }),
+    onKeyDown: e => handleKeyDown({ allPiecesRef, canBeGrabbed, e, emptyPieceIdx, idx, movements, setMovements, adjacentPieces }),
     className: `puzzle__piece 
                     ${canBeGrabbed && 'puzzle__piece--movable'}
                     ${elmnt == emptyPiece ? 'puzzle__piece--empty' : `puzzle__pieza${elmnt}`}
