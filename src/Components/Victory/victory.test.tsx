@@ -21,7 +21,7 @@ it('shouldnt render victory if theres no victory', () => {
     />
   );
 
-  const victoryMsg = screen.queryByRole('alert');
+  const victoryMsg = screen.queryByText(/You have solved the puzzle/i);
   expect(victoryMsg).not.toBeInTheDocument();
 });
 
@@ -40,9 +40,9 @@ it('should render a victory msg', () => {
     />
   );
 
-  const victoryMsg = screen.getByRole('alert');
+  const victoryMsg = screen.getByText(/You have solved the puzzle/i);
 
   expect(victoryMsg).toBeInTheDocument();
   expect(victoryMsg).toHaveAttribute('aria-atomic', 'true');
-  expect(victoryMsg).toHaveTextContent(/Congratulations! You have solved the puzzle/i);
+  expect(victoryMsg).toHaveAttribute('role', 'alert');
 });

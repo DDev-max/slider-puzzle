@@ -21,7 +21,6 @@ it('should render a header', () => {
 
 it('should render victory', () => {
   render(<Header movements={movements} setMovements={setMovements} setVictory={setVictory} victory={true} />);
-
-  const victory = screen.getByRole('alert');
-  expect(victory).toBeInTheDocument();
+  const victoryMssg = screen.getByText(/You have solved the puzzle/i);
+  expect(victoryMssg).toBeInTheDocument();
 });

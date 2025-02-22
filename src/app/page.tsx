@@ -5,7 +5,7 @@ import { Puzzle } from '../Components/Puzzle/Puzzle'
 import '../sass/styles.scss'
 import { useMovementsStorage } from '../Components/Puzzle/useMovementsStorage/useMovementsStorage'
 
-export default function Page() {
+export default function Page({ puzzleSize }: { puzzleSize?: number }) {
   const [movements, setMovements] = useState<number[]>([])
   useMovementsStorage({ movements, setMovements })
 
@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       <Header movements={movements} setMovements={setMovements} setVictory={setVictory} victory={victory} />
-      <Puzzle movements={movements} setMovements={setMovements} />
+      <Puzzle movements={movements} setMovements={setMovements} size={puzzleSize} />
     </>
   )
 }

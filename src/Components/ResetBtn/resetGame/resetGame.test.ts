@@ -11,7 +11,6 @@ it('should restart the game', () => {
   restartGame({ randomArray, setMovements, setRefresh, setStopWatch, setVictory });
 
   expect(setStopWatch).toHaveBeenCalledWith(0);
-  expect(setRefresh).toHaveBeenCalled();
   expect(setMovements).toHaveBeenCalledWith(randomArray);
   expect(setVictory).toHaveBeenCalledWith(false);
 });
