@@ -12,14 +12,17 @@ export function useRandomArray({ refresh, size = defaultSize }: UseRandomArrayPr
   useEffect(() => {
     const piecesQtty = size * size
 
-    const array = Array.from({ length: piecesQtty }, (_, idx) => idx + 1)
+    const sortedArray = Array.from({ length: piecesQtty }, (_, idx) => idx + 1)
+    const randomArray = [...sortedArray]
 
-    for (let i = array.length - 1; i > 0; i--) {
-      const randomNumber = Math.floor(Math.random() * (i + 1))
-      ;[array[i], array[randomNumber]] = [array[randomNumber], array[i]]
+    while (randomArray.toString() === sortedArray.toString()) {
+      for (let i = randomArray.length - 1; i > 0; i--) {
+        const randomNumber = Math.floor(Math.random() * (i + 1))
+        ;[randomArray[i], randomArray[randomNumber]] = [randomArray[randomNumber], randomArray[i]]
+      }
     }
 
-    setShuffledArray(array)
+    setShuffledArray(randomArray)
   }, [refresh, size])
 
   return shuffledArray
