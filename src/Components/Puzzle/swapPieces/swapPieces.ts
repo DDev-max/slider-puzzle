@@ -6,7 +6,7 @@ interface SwapPiecesProps extends MovementsState {
 }
 
 export function swapPieces({ oldPieceIdx, setMovements, movements, newPieceIdx }: SwapPiecesProps) {
-  const dropSound = new Audio('cheess.mp3')
+  const dropSound = new Audio('chess.mp3')
   dropSound.play()
 
   const movementsCopy = [...movements]

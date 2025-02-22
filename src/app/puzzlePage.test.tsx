@@ -59,7 +59,7 @@ it('should restart the game by pressing the button', async () => {
   render(<Page puzzleSize={2} />);
 
   const stopWatch = screen.getByRole('timer');
-  const firtsPiece = screen.getByRole('application', { name: 'Piece 1, position 1 of 4' });
+  const firstPiece = screen.getByRole('application', { name: 'Piece 1, position 1 of 4' });
   const secondPiece = screen.getByRole('application', { name: 'Piece 2, position 2 of 4' });
   const thirdPiece = screen.getByRole('application', { name: 'Piece 3, position 4 of 4' });
   const restartBtn = screen.getByRole('button', { name: /Restart game/i });
@@ -73,7 +73,7 @@ it('should restart the game by pressing the button', async () => {
 
   await user.click(restartBtn);
 
-  expect(firtsPiece.getAttribute('aria-label')).toMatch(/Piece 1,.*position 4 of 4/i);
+  expect(firstPiece.getAttribute('aria-label')).toMatch(/Piece 1,.*position 4 of 4/i);
   expect(secondPiece.getAttribute('aria-label')).toMatch(/Piece 2,.*position 3 of 4/i);
   expect(thirdPiece.getAttribute('aria-label')).toMatch(/Piece 3,.*position 2 of 4/i);
   expect(stopWatch).toHaveTextContent(/0 m:0 s/);

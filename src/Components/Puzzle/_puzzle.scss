@@ -42,7 +42,7 @@
 }
 
 @for $i from 1 through 9 {
-  .puzzle__pieza#{$i} {
+  .puzzle__piece#{$i} {
     background-color: hsl(0, 75%, $i * 3%);
   }
 }

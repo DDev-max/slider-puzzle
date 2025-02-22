@@ -49,7 +49,7 @@ export function dependentAttributes({
     onKeyDown: e => handleKeyDown({ allPiecesRef, canBeGrabbed, e, emptyPieceIdx, idx, movements, setMovements, adjacentPieces }),
     className: `puzzle__piece 
                     ${canBeGrabbed && 'puzzle__piece--movable'}
-                    ${elmnt == emptyPiece ? 'puzzle__piece--empty' : `puzzle__pieza${elmnt}`}
+                    ${elmnt == emptyPiece ? 'puzzle__piece--empty' : `puzzle__piece${elmnt}`}
                     ${grabIdx == idx && 'puzzle__piece--grabbing'}`,
   }
 }

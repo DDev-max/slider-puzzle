@@ -20,12 +20,12 @@ it('should render a puzzle', () => {
 test('movable pieces should have draggable attribute', () => {
   render(<Puzzle movements={movements} setMovements={setMovements} size={2} />);
 
-  const firtsPiece = screen.getByRole('application', { name: 'Piece 1, position 1 of 4' });
+  const firstPiece = screen.getByRole('application', { name: 'Piece 1, position 1 of 4' });
   const secondPiece = screen.getByRole('application', { name: 'Piece 2, position 2 of 4' });
   const thirdPiece = screen.getByRole('application', { name: 'Piece 3, position 3 of 4' });
   const emptyPiece = screen.getByRole('application', { name: 'Empty space, you can put a nearby piece here.' });
 
-  expect(firtsPiece).toHaveAttribute('draggable', 'false');
+  expect(firstPiece).toHaveAttribute('draggable', 'false');
 
   expect(secondPiece).toHaveAttribute('draggable', 'true');
   expect(thirdPiece).toHaveAttribute('draggable', 'true');
