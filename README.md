@@ -2,7 +2,7 @@
 
 The design and movements of the pieces of this sliding puzzle are intended to resemble a real one.
 
-🔗[View Live Site](github.com)
+🔗[View Live Site](https://slider-puzzle-theta.vercel.app/)
 
 ## Features
 
