@@ -8,8 +8,11 @@
   background-color: vars.$puzzleClr;
   border: 0.5rem solid black;
   border-radius: 0.5rem;
-
   box-shadow: -1rem 1.5rem 1rem rgba(0, 0, 0, 0.555);
+
+  @media (width < 400px) {
+    max-height: 18rem;
+  }
 
   &__piece {
     border-radius: 0.5rem;
