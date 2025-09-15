@@ -10,7 +10,8 @@ The design and movements of the pieces of this sliding puzzle are intended to re
 ✔️ **Easy to play** - Drag and drop a piece into the empty space or just click on it.  
 ✔️ **Responsive design** – Works on all screen sizes  
 ✔️ **BEM** – CSS methodology  
-✔️ **Clean Code** – Modular, formatted, and easy to extend
+✔️ **Clean Code** – Modular, formatted, and easy to extend  
+✔️ **PWA** - Downloadable website
 
 ## **Tech Stack**
 
